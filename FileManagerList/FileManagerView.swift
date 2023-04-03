@@ -8,28 +8,28 @@
 import SwiftUI
 
 struct FileManagerView: View {
-@ObservedObject var viewModel = FilemanagerViewModel()
+    @ObservedObject var viewModel = FilemanagerViewModel()
     var fileModel : FilemanagerModel?
     @State var fileSelected = false
     @State var selectImage = false
-
+    
     var body: some View {
         NavigationView {
             VStack{
                 HStack{
                     Spacer()
                     Button {
-                     fileSelected = true
+                        fileSelected = true
                     } label: {
                         Image(systemName: "plus.square.fill")
                             .resizable()
-                           .frame(width: 40,height: 40)
+                            .frame(width: 40,height: 40)
                             .foregroundColor(.black)
                     }
                 }.padding(10)
                 List{
                     ForEach(0..<(viewModel.fileModel.count),id: \.self){ index in
-                       let model = viewModel.fileModel[index]
+                        let model = viewModel.fileModel[index]
                         if model.title.isEmpty{
                             EmptyView()
                         }else{
@@ -37,13 +37,13 @@ struct FileManagerView: View {
                                 .onTapGesture {
                                     viewModel.selectedIndex = index
                                     selectImage = true
-                                    }
+                                }
                         }
                     }.onDelete { indexSet in
                         viewModel.fileModel.remove(atOffsets: indexSet)
                     }
                 }
-        }
+            }
             .navigationTitle("Downloading Images!")
             .navigationBarTitleDisplayMode(.automatic)
         }
@@ -94,7 +94,7 @@ struct FileManagerView: View {
             Spacer()
         }
     }
-  
+    
     @ViewBuilder func EmptyView() -> some View{
         HStack{
         }
