@@ -12,8 +12,6 @@ import Combine
 class FilemanagerViewModel : ObservableObject {
     @Published var selectedIndex = 0
     @Published var fileModel = [FilemanagerModel]()
-    
-   
 }
 
 

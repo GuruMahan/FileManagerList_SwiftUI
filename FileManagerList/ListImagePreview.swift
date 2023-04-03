@@ -8,8 +8,6 @@
 import SwiftUI
 import QuickLook
 struct ListImagePreview: View {
-//    var callForword: ((_ infoToReturn: UIImage?) -> ())?
-//    var callBack:(UIImage?) ->() = {_ in }
     let listImg: UIImage?
     let title:String?
     let subTitle:String?
@@ -36,7 +34,6 @@ struct ListImagePreview: View {
                 }
             }
         }
-
     }
 }
 

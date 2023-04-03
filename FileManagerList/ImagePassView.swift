@@ -11,6 +11,7 @@ struct ImagePassView: View {
     var image: UIImage?
     let title1:String?
     let subTitle1:String?
+    
     var body: some View {
         ZStack{
             VStack{
@@ -20,7 +21,6 @@ struct ImagePassView: View {
                         .aspectRatio(1, contentMode: .fill)
                         .frame(width: 250,height: 250)
                         .cornerRadius(125)
-                      
                 }
                 VStack(alignment: .leading,spacing: 10){
                     let str = title1?.components(separatedBy:".").first
@@ -38,14 +38,9 @@ struct ImagePassView: View {
                         Text(subTitle1 ?? "")
                             .foregroundColor(Color.red.opacity(0.8))
                     }
-                    
-                  
                 }
-              
             }
-            
         }
-     
     }
 }
 
